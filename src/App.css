@@ -1,0 +1,185 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* button.js */
+.btn{
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn button {
+  width: 250px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0d6efd;
+  border: none;
+  margin: 25px;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+  background-color: #c2741b;
+  color: #000;
+}
+
+/* themeButton.js */
+.cabecalho{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.cabecalho h1 {
+  font-size: 5rem;
+}
+
+.btnHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0d6efd;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btnHeader a {
+  color: #fff;
+}
+
+
+.btnHeader:hover,
+.btnHeader a:hover{
+  transform: scale(1.1);
+  transition: 0.6s;
+  background-color: #c2741b;
+  color: #000;
+}
+
+/* listPokemon.js */ 
+.listPokemon{
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+.listPokemon ul {
+  padding: 50px;
+  gap: 30px;
+}
+
+.listPokemon li{
+  width: 100%;
+  max-width: 230px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 10px;
+  background-color: #c2741b;
+  cursor: pointer;
+}
+
+.listPokemon li h3{
+    color: #000;
+}
+
+.listPokemon li:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* CardPkemon */
+
+.CardPokemon {
+  text-align: center;
+}
+
+.pokemon {
+  padding: 20px;
+}
+
+.pokemon img {
+  max-width: 300px;
+}
+
+.pokemon h3{
+  margin-top: 10px;
+  letter-spacing: 3px;
+  font-size: 25px;
+}
+
+.atributos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 50px;
+}
+
+.moves {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.listMoves {
+  margin: 20px;
+  width: 98%;
+  max-width: 200px;
+  height: 190px;
+  box-shadow: 3px 3px 8px;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.ability{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.listAbility {
+  margin: 20px;
+  width: 98%;
+  max-width: 300px;
+  height: 190px;
+  box-shadow: 3px 3px 8px;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.listAbility p {
+  padding: 5px;
+}
+
+
