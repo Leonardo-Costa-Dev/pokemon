@@ -6,35 +6,6 @@
   text-decoration: none;
 }
 
-/* button.js */
-.btn{
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.btn button {
-  width: 250px;
-  height: 50px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #0d6efd;
-  border: none;
-  margin: 25px;
-  cursor: pointer;
-}
-
-.btn button:hover {
-  transform: scale(1.1);
-  transition: 0.6s;
-  background-color: #c2741b;
-  color: #000;
-}
-
 /* themeButton.js */
 .cabecalho{
   display: flex;
@@ -67,7 +38,6 @@
   color: #fff;
 }
 
-
 .btnHeader:hover,
 .btnHeader a:hover{
   transform: scale(1.1);
@@ -77,30 +47,38 @@
 }
 
 /* listPokemon.js */ 
-.listPokemon{
+section{
   width: 100%;
-  max-width: 1600px;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
+}
+.listPokemon{
+  width: 93%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 50px;
+  margin-top: 20px;
+  overflow: auto;
 }
 
 .listPokemon ul {
-  padding: 50px;
   gap: 30px;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
 .listPokemon li{
   width: 100%;
-  max-width: 230px;
+  max-width: 200px;
+  height: 190px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 49px;
   text-align: center;
-  box-shadow: 5px 5px 10px;
+  box-shadow: 5px 5px 10px #000;
   background-color: #c2741b;
   cursor: pointer;
 }
@@ -116,14 +94,51 @@
   color: #fff;
 }
 
+/* button.js */
+.btn{
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn button {
+  width: 250px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0d6efd;
+  border: none;
+  margin: 25px;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+  background-color: #c2741b;
+  color: #000;
+}
+
 /* CardPkemon */
 
 .CardPokemon {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   text-align: center;
+  margin-top: -150px;
 }
 
 .pokemon {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pokemon img {
@@ -136,50 +151,51 @@
   font-size: 25px;
 }
 
-.atributos{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  padding: 50px;
+.attribute{
+  padding: 30px;
+  width: 600px;
 }
 
-.moves {
+.attBtn {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.listMoves {
-  margin: 20px;
-  width: 98%;
-  max-width: 200px;
-  height: 190px;
-  box-shadow: 3px 3px 8px;
-  overflow: auto;
+.attributeBtn {
+  width: 130px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d6efd;
   border-radius: 5px;
-}
-
-.ability{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.listAbility {
-  margin: 20px;
-  width: 98%;
-  max-width: 300px;
-  height: 190px;
-  box-shadow: 3px 3px 8px;
-  overflow: auto;
-  border-radius: 5px;
-}
-
-.listAbility p {
+  border: none;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin: 10px;
   padding: 5px;
+}
+
+.attributeBtn:hover {
+  transition: 0.6s;
+  background-color: #c2741b;
+  color: #000;
+}
+
+.listAttribute {
+  box-shadow: 3px 3px 8px;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.listAttribute li {
+   font-size: 15px;
+   font-weight: bold;
+   padding: 5px 10px;
 }
 
 

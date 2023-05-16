@@ -3,25 +3,27 @@ import "../../App.css"
 
 const Button = (props) => {
 
-    return(
-        <div className="btn">
-          <button onClick={(item) => {
-            item = 10
-            props.setLimit(item + props.limit)
-            }}>Load Pokemon
-          </button>
-          <button onClick={(item) => {
-            item = 10
-            if(props.limit > 10){
-                props.setLimit(props.limit - item)
-            }else{
-                alert('Adicione mais pokemons')
-                props.setLimit(item)
-            }
-            }}>Remove Pokemon
-          </button>
-        </div>
-    )
+  const loadPokemon = () => {
+    const pokemon = 10
+    return props.setLimit(pokemon + props.limit)
+  }
+
+  const removePokemon = () => {
+    const pokemon = 10
+    if (props.limit > 10) {
+      props.setLimit(props.limit - pokemon)
+    } else {
+      alert('Adicione mais pokemons')
+      props.setLimit(pokemon)
+    }
+  }
+
+  return (
+    <div className="btn">
+      <button onClick={() => loadPokemon()}>Load Pokemon</button>
+      <button onClick={() => removePokemon() }>Remove Pokemon</button>
+    </div>
+  )
 }
 
 export default Button

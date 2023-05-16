@@ -9,13 +9,31 @@ const CardPokemon = () => {
 
     const [pokemon, setPokemon] = useState(null)
 
+    const [attribute, setAttribute] = useState('Click to see assignments')
+
     const { name } = useParams()
 
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
             .then(item => setPokemon(item.data))
-       
     }, [name])
+
+    const move = () => {
+        return setAttribute(pokemon.moves.map((item, index) => (
+            <li key={index}>
+                {item.move.name}
+            </li>
+        )))
+    }
+
+    const ability = () => {
+        return setAttribute(pokemon.abilities.map((item, index) => (
+            <li key={index}>
+                <h2>{item.ability.name}</h2>
+                <Abilities data={item.ability.url} />
+            </li>
+        )))
+    }
 
 
     if (!pokemon) {
@@ -23,59 +41,43 @@ const CardPokemon = () => {
     }
 
     return (
-        <section style={{color: theme.color, background: theme.background}} className="CardPokemon">
-            <div className="pokemon">
-                <img src={pokemon.sprites.other.dream_world.front_default} alt="Nome Pokemon" />
-                <h3>{pokemon.name}</h3>
-                <h4>{pokemon.types.map(type => type.type.name).join('  ')}</h4>
-            </div>
-            <div className="atributos">
-                <div className="moves">
-                    <h3>Move List</h3>
-                    <ul className="listMoves">
-                        {
-                            pokemon.moves.map((item, index) => (
-                                <li key={index}>
-                                    <p>{item.move.name}</p>                            
-                                </li>
-                            ))
-                        }
-                    </ul>
+        <section style={{ color: theme.color, background: theme.background }}>
+            <div className="CardPokemon">
+                <div className="pokemon">
+                    <img src={pokemon.sprites.other.dream_world.front_default} alt="Nome Pokemon" />
+                    <h3>{pokemon.name}</h3>
+                    <h4>{pokemon.types.map(type => type.type.name).join('  ')}</h4>
                 </div>
-                <div className="ability">
-                    <h3>Ability List</h3>
-                    <ul className="listAbility">
-                        {
-                            pokemon.abilities.map((item, index) => (
-                                <li key={index}>
-                                    <h1>{item.ability.name}</h1>
-                                    <Abilities  data={item.ability.url} />    
-                                </li>
-                            ))
-                        }
-                    </ul>
+                <div className="attribute">
+                    <div className="attBtn">
+                        <button className="attributeBtn" onClick={move}>Move List</button>
+                        <button className="attributeBtn" onClick={ability}>Ability List</button>
+                    </div>
+                    <div className="listAttribute">
+                        <ul>
+                            {attribute}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
     )
 }
 
-const Abilities = ({data}) => {
+const Abilities = ({ data }) => {
 
     const [ability, setAbility] = useState(null)
 
     useEffect(() => {
-        axios.get(data).then(res => setAbility(res) )
-    },[data])
+        axios.get(data).then(res => setAbility(res))
+    }, [data])
 
-    if(!ability){
+    if (!ability) {
         return null
     }
 
-    return(
-        <>
-            <p>{ability.data.effect_entries.map(res => res.effect)}</p>
-        </>
+    return (
+        <p>{ability.data.effect_entries.map(res => res.effect)}</p>
     )
 }
 
