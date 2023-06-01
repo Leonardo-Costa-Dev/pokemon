@@ -58,8 +58,64 @@
   transform: scale(1.1);
   transition: 0.6s;
   background-color: #c2741b;
-  color: #000;
+  color: #864c4c;
 }
+
+.start{
+  width: 68px;
+  height: 30px;
+  background-color: #0d6efd;
+  border-radius: 15px;
+}
+
+.switch {
+  position: relative;
+  width: 3.5rem;
+  height: 2rem;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+ 
+}
+
+.slider::before{
+  position: absolute;
+  content: "";
+  height: 1.4rem;
+  width: 1.4rem;
+  left: 0.25rem;
+  transform: translate(150%, 18%);
+  border-radius: 15px;
+  -webkit-transition: 0.4s;
+  background: linear-gradient(30deg, #ff0040, #ff8c00 70%);
+  transition: 0.4s;
+}
+
+.input:checked + .slider{
+  background-color: #222427;
+}
+
+input:checked + .slider::before {
+  left: calc(100% - 1.7rem);
+  background-color: #222427;
+  box-shadow: inset -3px -2px 5px -2px #8983f7,
+              inset -10px -4px 0 0 #a3dafb;
+}
+
 
 
 /* listPokemon.js */
@@ -235,13 +291,14 @@ section {
   padding: 5px 10px;
 }
 
-@media (max-width: 875px) {
-  .cabecalho img {
+@media (max-width: 767px) {
+
+   .cabecalho{
+     padding: 15px;
+   } 
+   .cabecalho img {
     display: none;
   }
-}
-
-@media (max-width: 769px) {
   .sectionCard {
     overflow: hidden;
   }

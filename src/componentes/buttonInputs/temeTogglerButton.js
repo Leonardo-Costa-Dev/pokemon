@@ -5,10 +5,11 @@ export const ThemeTogglerButton = () => {
     const { theme, setTheme } = useContext(themeContext)
 
     return (
-        <div>
-            <button className="btnHeader" onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}>
-            {theme === themes.light ? 'dark' : 'ligth'}
-            </button>
+        <div className="start">
+            <label className="switch">
+                <input type="checkbox" checked={theme === themes.light} onChange={() => setTheme(theme === themes.light ? themes.dark : themes.light)} />
+                <span className="slider"></span>
+            </label>
         </div>
     )
 }
