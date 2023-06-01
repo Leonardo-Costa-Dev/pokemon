@@ -1,9 +1,7 @@
-import CardPokemon from "../componentes/cardPokemon";
+import CardDetails from "../componentes/cardDetails";
 
 const Card = () => {
-    return (
-        <CardPokemon />
-    )
+    return <CardDetails />
 }
 
 export default Card

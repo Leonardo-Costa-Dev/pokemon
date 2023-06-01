@@ -1,9 +1,10 @@
 import axios from "axios"
 import { useContext, useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { themeContext } from "../contexts/theme.contexts"
+import { ThemeTogglerButton } from "./buttonInputs/temeTogglerButton"
 
-const CardPokemon = () => {
+const CardDetails = () => {
 
     const { theme } = useContext(themeContext)
 
@@ -41,12 +42,21 @@ const CardPokemon = () => {
     }
 
     return (
-        <section style={{ color: theme.color, background: theme.background }}>
+        <>
+        <header className="cabecalho" style={{color: theme.color, background: theme.background}}>
+            <Link to={`/`}>
+            <button className="btnHeader">Home</button>
+            </Link>
+            <h1>Pokemon</h1>
+            <ThemeTogglerButton />
+        </header>
+       <main> 
+        <section className="sectionCard" style={{ color: theme.color, background: theme.background }}>
             <div className="CardPokemon">
                 <div className="pokemon">
                     <img src={pokemon.sprites.other.dream_world.front_default} alt="Nome Pokemon" />
                     <h3>{pokemon.name}</h3>
-                    <h4>{pokemon.types.map(type => type.type.name).join('  ')}</h4>
+                    <h4>{pokemon.types.map(item => item.type.name).join(' | ')}</h4>
                 </div>
                 <div className="attribute">
                     <div className="attBtn">
@@ -55,12 +65,14 @@ const CardPokemon = () => {
                     </div>
                     <div className="listAttribute">
                         <ul>
-                            {attribute}
+                           {attribute}
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+      </main>
+    </>   
     )
 }
 
@@ -83,4 +95,4 @@ const Abilities = ({ data }) => {
 
 
 
-export default CardPokemon
+export default CardDetails
