@@ -3,7 +3,7 @@
 Link da API: https://pokeapi.co/
 <br />
 <br />
-O projeto Pokedex App foi feito com React + JavaScript, e é alimentada pela PokéAPI.
+O projeto Pokedex App foi feito com React, e é alimentada pela PokéAPI.
 
 Ele inicia mostrando 10 pokemons, que ao clicar no pokemon, o usuario será direcionado para uma página onde sera mostrado algumas informações sobre esse pokemon, como seu nome, tipo, uma lista de seus movimentos, lista de suas habilidades.
 
